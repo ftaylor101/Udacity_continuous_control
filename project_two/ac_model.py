@@ -10,16 +10,14 @@ class PolicyNetwork(nn.Module):
     Actor-Critic (Policy) Model.
     """
 
-    def __init__(self, state_size: int = 33, action_size: int = 4, seed: int = 46, layer_size: int = 128):
+    def __init__(self, state_size: int = 33, action_size: int = 4, layer_size: int = 128):
         """Initialize parameters and build model.
 
         :param state_size: Dimension of each state
         :param action_size: Dimension of each action
-        :param seed: Random seed
         :param layer_size: Dimension of the hidden layers
         """
         super(PolicyNetwork, self).__init__()
-        self.seed = torch.manual_seed(seed)
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
         # main body of network

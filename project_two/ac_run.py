@@ -88,6 +88,7 @@ def train_ac(policy_net: PolicyNetwork, agent: A2CAgent, env: UnityEnvironment, 
     fig = plt.figure()
     ax = fig.add_subplot(111)
     plt.plot(np.arange(len(average_scores)), rolling_average, c='b', label='Rolling average over last 100 episodes')
+    plt.plot(np.arange(len(average_scores)), average_scores, c='g', label='Average score per agent')
     plt.ylabel('Score')
     plt.xlabel('Episode #')
     plt.legend()
